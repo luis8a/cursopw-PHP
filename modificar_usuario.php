@@ -31,8 +31,8 @@
 		$error = false;
 		$errores = array ("usuario"=>"", "clave"=>"", "correo"=>"");
 
-		include "validarclave.php";
 		include "validarusuario.php";
+		include "validarclave.php";
 		include "validarcorreo.php";
 		}
 
@@ -40,7 +40,7 @@
 		{									
 		include "conexionbasedatos.php";
 
-		$sql = "update usuario set clave='$clave', correo='$correo', tipo_cliente='$tipo_cliente', cedula_rif='$cedula_rif', nombres='$nombres', apellidos='$apellidos' direccion='$direccion', telefono='$telefono' where usuario='$usuario'";
+		$sql = "update usuario set clave='$clave', correo='$correo', tipo_cliente='$tipo_cliente', cedula_rif='$cedula_rif', nombres='$nombres', apellidos='$apellidos', direccion='$direccion', telefono='$telefono' where usuario='$usuario'";
 		
 		if (mysqli_query($conn, $sql))
 			{
@@ -61,7 +61,7 @@
 		{
 ?>	
 
-<form action="modificar_usuario_incompleto.php" name="modificar" method="post">
+<form action="modificar_usuario.php" name="modificar" method="post">
 
 	<h1>Modificar datos:</h1>
 
@@ -97,7 +97,7 @@
 			<option value="J">J
 			<option value="G">G
 		</select>
-		   
+				   
 		<input type="text" value="<?php echo $cedula_rif; ?>" name="cedularif" id="micedularif" size="12" maxlenght="12"></p>
 					
 	<p class="etiqueta">Nombre(s):</p>
@@ -108,9 +108,10 @@
 
 	<p class="etiqueta">Dirección:</p>
 	<p class="campo"><input type="text" value="<?php echo $direccion; ?>" name="direccion" id="midireccion" size="20" maxlenght="100"></p>
-	
+
 	<p class="etiqueta">Teléfono:</p>
-	<p class="campo"><input type="tel" value="<?php echo $telefono; ?>" name="telefono" id="mistelefono" size="20" maxlenght="100"></p>
+	<p class="campo"><input type="tel" value="<?php echo $telefono; ?>" name="telefono" id="mitelefono" size="20" maxlenght="100"></p>
+
 	
 	<p class="campo"><input type="submit" name="modificar" value="Modificar"></p>
 
