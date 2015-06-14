@@ -15,6 +15,7 @@ include "cabecera.php";
 						<li>¿Quiénes somos?</li>
 						<li><a class="opcionmenu" href="insertar_usuario2.php">Registrarse</a></li>
 						<li><a class="opcionmenu" href="acceder_usuario.php">Modificar perfil</a></li>
+						<li><a class="opcionmenu" href="agregar_evento.php">Eventos</a></li>
 					</ul>
 				</nav>
 				<section id="seccion">
